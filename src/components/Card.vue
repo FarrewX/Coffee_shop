@@ -96,31 +96,31 @@ const items = ref([
   {
     title: 'ต๋องเต็มโต๊ะ',
     name: '',
-    imageUrl: '../src/components/image/tonk.jpg',
+    imageUrl: 'image/tonk.jpg',
     additionalInfo: 'ข้อมูลเพิ่มเติมสำหรับท่าช้าง'
   },
   {
     title: 'ข้าวซอยแม่สาย',
     name: '',
-    imageUrl: '../src/components/image/maa.jpg',
+    imageUrl: 'image/maa.jpg',
     additionalInfo: 'ข้อมูลเพิ่มเติมสำหรับท่าช้าง'
   },
   {
     title: 'Papa Curry',
     name: '',
-    imageUrl: '../src/components/image/papa.jpg',
+    imageUrl: 'image/papa.jpg',
     additionalInfo: 'ข้อมูลเพิ่มเติมสำหรับท่าช้าง'
   },
   {
     title: 'ครัวอาจารย์สายหยุด',
     name: '',
-    imageUrl: '../src/components/image/sai.jpg',
+    imageUrl: 'image/sai.jpg',
     additionalInfo: 'ข้อมูลเพิ่มเติมสำหรับท่าช้าง'
   },
   {
     title: 'คั่วไก่นิมมาน',
     name: '',
-    imageUrl: '../src/components/image/nim.jpg',
+    imageUrl: 'image/nim.jpg',
     additionalInfo: 'ข้อมูลเพิ่มเติมสำหรับท่าช้าง'
   },
 ]);
