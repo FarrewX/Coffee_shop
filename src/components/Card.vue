@@ -53,13 +53,15 @@ const submitForm = () => {
 
 <template>
     <div id="app contanier">
-        <div class="card contanier" v-for="(item, index) in items" :key="index">
-          <img :src="item.imageUrl" @click="showForm(index)">
+      <div class="card container" v-for="(item, index) in items" :key="index">
+        <img :src="item.imageUrl" @click="showForm(index)">
+        <p style="font-size: 20px;">ร้าน {{ item.title }}</p>
       </div>
-    <div class="popup" v-if="isFormVisible">
+      <div class="popup" v-if="isFormVisible">
       <div class="popup-content">   
-        <h2>กรอกข้อมูล</h2>
+        
         <form @submit.prevent="submitForm">
+          <label>จองโต๊ะ</label>
           <label for="name">ชื่อ:</label>
           <input type="text" id="name" v-model="formData.name" required>
 
@@ -76,7 +78,7 @@ const submitForm = () => {
           <input type="time" id="time" v-model="formData.time" required>
 
           <label for="table">จำนวนโต๊ะ:</label>
-          <input type="number" id="table" v-model="formData.table" required>
+          <input type="number" min="1" id="table" v-model="formData.table" required>
 
           <button type="submit">ยืนยัน</button>
           <button class="buttonc" @click="hideForm">ยกเลิก</button>
@@ -92,24 +94,34 @@ import { ref } from "vue";
 
 const items = ref([
   {
-    name: 'ท่าช้าง',
-    imageUrl: '../src/components/image/coffee.png',
+    title: 'ต๋องเต็มโต๊ะ',
+    name: '',
+    imageUrl: '../src/components/image/tonk.jpg',
+    additionalInfo: 'ข้อมูลเพิ่มเติมสำหรับท่าช้าง'
   },
   {
-    name: 'รูปที่ 2',
-    imageUrl: '../src/components/image/coffee.png',
+    title: 'ข้าวซอยแม่สาย',
+    name: '',
+    imageUrl: '../src/components/image/maa.jpg',
+    additionalInfo: 'ข้อมูลเพิ่มเติมสำหรับท่าช้าง'
   },
   {
-    name: 'รูปที่ 3',
-    imageUrl: '../src/components/image/coffee.png',
+    title: 'Papa Curry',
+    name: '',
+    imageUrl: '../src/components/image/papa.jpg',
+    additionalInfo: 'ข้อมูลเพิ่มเติมสำหรับท่าช้าง'
   },
   {
-    name: 'รูปที่ 4',
-    imageUrl: '../src/components/image/coffee.png',
+    title: 'ครัวอาจารย์สายหยุด',
+    name: '',
+    imageUrl: '../src/components/image/sai.jpg',
+    additionalInfo: 'ข้อมูลเพิ่มเติมสำหรับท่าช้าง'
   },
   {
-    name: 'รูปที่ 5',
-    imageUrl: '../src/components/image/coffee.png',
+    title: 'คั่วไก่นิมมาน',
+    name: '',
+    imageUrl: '../src/components/image/nim.jpg',
+    additionalInfo: 'ข้อมูลเพิ่มเติมสำหรับท่าช้าง'
   },
 ]);
 
@@ -121,6 +133,10 @@ body {
   font-family: Arial, sans-serif;
 }
 
+img{
+  width: 260px;
+  height: 200px;
+}
 .card {
   width: 260px;
   margin: 5px;
